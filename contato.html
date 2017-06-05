@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contato - Chatschool</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/pages/contato.css" rel="stylesheet">
+</head>
+<body>
+	<header id="header" class="page-contato">
+		<div class="container">
+			<div class="row">
+				<div class="col col-desktop-3 col-6">
+					<a href="#">
+						<img src="./images/logo.png" alt="Logo da Chatschool">
+					</a>
+				</div>
+				<div class="col col-desktop-9 col-6">
+					<nav>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="quem-somos.html">Quem somos</a></li>
+							<li><a href="clientes.html">Clientes</a></li>
+							<li><a href="equipe.html">Equipe</a></li>
+							<li><a href="contato.html" class="active">Contato</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-desktop-12 col-6 title">
+					<h1>Alta produtividade em tempo real</h1>
+				</div>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section class="section section-center">
+			<div class="container">
+				<h2>Contato</h2>
+				<p class="subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus iure quisquam impedit explicabo est voluptates mollitia deserunt numquam quas nulla repudiandae, alias ex deleniti itaque, quam exercitationem, eaque sapiente sunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate laboriosam corporis ullam qui reiciendis adipisci nisi, magnam ducimus suscipit, dolores itaque ipsa quae quo omnis. Odit minus consequatur, facilis voluptates.</p>
+			</div>
+
+			<!-- https://github.com/dwyl/html-form-send-email-via-google-script-without-server -->
+			<div class="container">
+				<form class="row" method="POST" action="https://script.google.com/macros/s/AKfycbyQw6fBVKK6SbNLsVB912ur2Q1W9qgRmxhLazBTksu9IPg6vUM/exec">
+					<div class="col col-desktop-6 col-6">
+						<div class="input-control">
+							<input type="text" name="nome" id="nome" required placeholder="Nome...">
+							<label for="nome">Nome*</label>
+						</div>
+						<div class="input-control">
+							<input type="email" name="email" id="email" required placeholder="Email...">
+							<label for="email">Email*</label>
+						</div>
+						<div class="input-control">
+							<input type="number" name="telefone" id="telefone" required placeholder="Telefone...">
+							<label for="telefone">Telefone</label>
+						</div>
+					</div>
+					<div class="col col-desktop-6 col-6">
+						<div class="input-control">
+							<textarea name="mensagem" id="mensagem" cols="30" rows="10" placeholder="Mensagem..."></textarea>
+							<label for="mensagem">Mensagem</label>
+						</div>
+					</div>
+						<input type="submit" value="Enviar" class="btn orange"> 
+				</form>
+			</div>
+		
+		</section>
+	</main>
+	<footer id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col col-offset-desktop-1 col-desktop-3">
+					<p><a href=""><img src="images/logo.png" alt="Logo da Chatschool"></a></p>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam minus omnis, repudiandae beatae, voluptates porro distinctio earum modi animi voluptatem nihil. Temporibus alias libero mollitia nisi, architecto maxime voluptates quod.</p>
+				</div>
+				<div class="col col-offset-desktop-1 col-desktop-2 col-2">
+					<h3>Menu</h3>
+					<nav>
+						<ul>
+							<li><a href="/" class="active">Home</a></li>
+							<li><a href="quem-somos.html">Quem somos</a></li>
+							<li><a href="clientes.html">Clientes</a></li>
+							<li><a href="equipe.html">Equipe</a></li>
+							<li><a href="contato.html">Contato</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col col-desktop-4 social col-4">
+					<a href="https://fb.com/"><img src="images/social-facebook.png" alt=""></a>
+					<a href="https://twitter.com/"><img src="images/social-twitter.png" alt=""></a>
+					<a href="https://youtube.com/"><img src="images/social-youtube.png" alt=""></a>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div id="copyright">
+		&copy; Chatschool 2017 - Todos os direitos reservados
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$('form').submit(function(e){
+			e.preventDefault();
+			$('form input[type=submit').val('Aguarde').attr('disabled', true);
+			$.ajax({
+				type: $('form').attr('method'),
+				url: $('form').attr('action'),
+				data: $('form').serialize(),
+				success: function(){
+					alert('Email enviado com sucesso');
+					$('form').trigger('reset');
+					$('form input[type=submit').val('Enviar').attr('disabled', false);
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>
